@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Salon Landing Page</title>
+
+    <!-- Bootstrap CSS -->
+
+    <!-- Custom styles -->
+    <style>
+      /* Add your custom styles here */
+      body {
+        padding-top: 56px; /* Adjust based on your navbar height */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Your Salon</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-light" (click)="loginBtn()">
+              Login
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-primary text-white text-center py-5">
+      <div class="container">
+        <h1 class="display-4">Welcome to Your Salon</h1>
+        <p class="lead">Experience the best in hair and beauty services</p>
+      </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Hair Styling</h3>
+                <p class="card-text">
+                  Our expert stylists will give you the perfect look.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Manicure & Pedicure</h3>
+                <p class="card-text">
+                  Pamper your hands and feet with our nail services.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Spa Treatments</h3>
+                <p class="card-text">
+                  Relax and rejuvenate with our spa treatments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>About Us</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+              amet est vel justo laoreet bibendum.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <!-- You can add an image or other content here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for appointments and inquiries.</p>
+            <!-- Add a contact form or contact information here -->
+          </div>
+          <div class="col-lg-6">
+            <!-- You can add a map or other content here -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
