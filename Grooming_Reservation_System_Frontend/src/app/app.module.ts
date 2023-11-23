@@ -8,6 +8,7 @@ import { UserregisterationComponent } from './components/userregisteration/userr
 import { FormsModule } from '@angular/forms';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import {HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LandingpageComponent } from './components/landingpage/landingpage.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

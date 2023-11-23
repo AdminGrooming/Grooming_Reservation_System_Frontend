@@ -15,26 +15,34 @@
                   <h4 class="mt-1 mb-5 pb-1">ChromaCuts</h4>
                 </div>
 
-                <form>
+                <!-- <form
+                  (ngSubmit)="!todoForm.invalid && loginBtn()" -->
+                <form #todoForm="ngForm">
                   <p>Please login to your account</p>
 
                   <div class="form-outline mb-4">
                     <input
                       type="email"
-                      id="form2Example11"
+                      id="useremail"
                       class="form-control"
-                      placeholder="Phone number or email address"
+                      placeholder="Email address"
+                      #name="ngModel"
+                      name="uname"
+                      [(ngModel)]="inpusermail"
                     />
                     <label class="form-label" for="form2Example11"
-                      >Username</label
+                      >Email address</label
                     >
                   </div>
 
                   <div class="form-outline mb-4">
                     <input
                       type="password"
-                      id="form2Example22"
+                      id="userpassword"
                       class="form-control"
+                      #name="ngModel"
+                      name="uname"
+                      [(ngModel)]="inpuserpass"
                     />
                     <label class="form-label" for="form2Example22"
                       >Password</label
@@ -45,6 +53,7 @@
                     <button
                       class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
                       type="button"
+                      (click)="handlelogin()"
                     >
                       Log in</button
                     ><br />
