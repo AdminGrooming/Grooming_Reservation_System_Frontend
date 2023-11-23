@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 export class LandingpageComponent {
   constructor(private router:Router){}
   loginBtn():void{
-    console.log("login button clicked")
     this.router.navigate(['login']);
   }
 }

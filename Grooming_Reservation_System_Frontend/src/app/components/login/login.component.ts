@@ -18,7 +18,7 @@ export class LoginComponent {
 
 
   handlelogin() {
-      
+      console.log("btn pressed")
       if(this.userauthentication.validateUser(this.inpusermail,this.inpuserpass)){
         this.loginuser = true;
         this.router.navigate(['homepage']);
