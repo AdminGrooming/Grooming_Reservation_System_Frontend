@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserauthenticationService } from 'src/app/services/userauthentication.service';
 import { DataserviceService } from 'src/app/services/dataservice.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,21 +13,28 @@ import { DataserviceService } from 'src/app/services/dataservice.service';
 export class LoginComponent {
   inpusermail= "";
   inpuserpass= "";
-  loginuser: boolean | undefined;
+  loginuser:boolean= false ;
+  
 
   constructor(private userauthentication: UserauthenticationService, private router: Router, private dataservice: DataserviceService){}
 
-
-  handlelogin() {
-      console.log("btn pressed")
-      if(this.userauthentication.validateUser(this.inpusermail,this.inpuserpass)){
-        this.loginuser = true;
-        this.router.navigate(['homepage']);
-    }
-    else {
-      console.log("error");
-      this.loginuser = false;
-    }
-  }
   
+  handlelogin() {
+    this.userauthentication.checkemailPass(this.inpusermail,this.inpuserpass).subscribe(
+        data=>{
+              sessionStorage.setItem("usermail",data.useremail),
+              this.router.navigate(['homepage']),
+              this.loginuser = true
+              },banckenderror=>this.errorHandling(banckenderror)
+      );
+    }  
+  errorHandling(banckenderror: any): void {
+    console.log("inside error"+banckenderror);
+    console.log("status="+banckenderror.status);
+  
+   if(banckenderror.status==400){
+         //this.errorMessage="Username not exists please register"
+         alert("Not exists Please Register")
+   }
+   }
 }

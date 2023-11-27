@@ -14,4 +14,9 @@ export class DataserviceService {
     return this.http.get<User>(`${this.url}/getUserByEmail/${email}/${password}`);
   }
 
+  getUserByEmail(email:string){
+    return this.http.get<User>(`${this.url}/getUserByEmail/${email}`);
+  }
+  
+
 }

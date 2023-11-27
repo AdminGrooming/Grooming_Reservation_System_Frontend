@@ -8,6 +8,13 @@ import { UserauthenticationService } from 'src/app/services/userauthentication.s
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent {
+username: any;
+
+  ngOnInit(){
+    this.username = sessionStorage.getItem("userfirstname");
+    console.log(this.username);
+  }
+
 logout() {
   this.userauthentication.logout();
   this.router.navigate(['login']);
