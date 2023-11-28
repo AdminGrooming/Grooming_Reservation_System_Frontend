@@ -7,3 +7,12 @@
     .card-registration .select-arrow {
     top: 13px;
     }
+
+
+    .salRegDivBackground {
+        background-image: url("\src\app\images\salonReg1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left;
+        
+      }
