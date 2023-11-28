@@ -8,10 +8,10 @@ import { UserauthenticationService } from 'src/app/services/userauthentication.s
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent {
-username: any;
+username: string;
 
   ngOnInit(){
-    this.username = sessionStorage.getItem("userfirstname");
+    this.username = sessionStorage.getItem("username");
     console.log(this.username);
   }
 

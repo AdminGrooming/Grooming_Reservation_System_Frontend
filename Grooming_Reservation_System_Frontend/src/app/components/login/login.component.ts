@@ -12,41 +12,26 @@ import { User } from 'src/app/dao/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  inpusermail:string;
-  inpuserpass:string;
-  loginuser = false ;
-  user:User;
+  inpusermail= "";
+  inpuserpass= "";
+  loginuser:boolean= false ;
   
 
   constructor(private userauthentication: UserauthenticationService, private router: Router, private dataservice: DataserviceService){}
 
   
   handlelogin() {
-      this.userauthentication.checkemailPass(this.inpusermail,this.inpuserpass).subscribe(
+      console.log("In handle login")
+      this.userauthentication.validateUser(this.inpusermail,this.inpuserpass).subscribe(
         data=>{
-                this.user=data;
-                this.userValidation(this.user);
-              },banckenderror=>this.errorHandling(banckenderror)
-              
+              sessionStorage.setItem("usermail",data.useremail),
+              sessionStorage.setItem("username",data.userfirstname),
+              this.router.navigate(['homepage']),
+              this.loginuser = true
+              }
         
     );
-       
-  }
-  errorHandling(banckenderror: any): void {
-    console.log("inside error"+banckenderror.status);
-    
-   if(banckenderror.status==400){
-         alert("Invalid password");
-   }
-  }
+}
 
-  userValidation(user:User){
-   
-      sessionStorage.setItem("usermail",btoa(user.useremail)),
-      this.router.navigate(['homepage']),
-      this.loginuser = true
-   
-
-  }
 
 }

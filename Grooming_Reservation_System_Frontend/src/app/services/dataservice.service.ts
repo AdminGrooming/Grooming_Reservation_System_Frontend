@@ -18,5 +18,9 @@ export class DataserviceService {
     return this.http.get<User>(`${this.url}/getUserByEmailid/${email}`);
   }
   
+  adduser(user:User){
+    return this.http.post<User>(`${this.url}/addUser`, user);
+  }
+  
 
 }

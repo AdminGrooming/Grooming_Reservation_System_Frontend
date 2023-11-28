@@ -5,6 +5,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
 import { RouteguardService } from './services/routeguard.service';
 import { UserregistrationComponent } from './components/userregistration/userregistration.component';
+import { SalonregistrationComponent } from './components/salonregistration/salonregistration.component';
+
 
 
 const routes: Routes = [
@@ -12,7 +14,8 @@ const routes: Routes = [
   { path: 'landingpage', component: LandingpageComponent},
   { path: 'login', component: LoginComponent },
   { path: "homepage", component: HomepageComponent, canActivate:[RouteguardService] },
-  { path: "userregistration", component: UserregistrationComponent, canActivate:[RouteguardService] },
+  { path: "userregistration", component: UserregistrationComponent },
+  { path: "salonregistration", component: SalonregistrationComponent },
 ];
 
 @NgModule({

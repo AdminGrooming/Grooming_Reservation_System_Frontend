@@ -14,6 +14,9 @@
 
               <form>
                 <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example1cg"
+                    >FIRST NAME</label
+                  >
                   <input
                     type="text"
                     id="form3Example1cg"
@@ -22,12 +25,9 @@
                     minlength="4"
                     required
                     #name="ngModel"
-                    [(ngModel)]="ufname"
+                    [(ngModel)]="user.userfirstname"
                     pattern="^[A-Za-z]+$"
                   />
-                  <label class="form-label" for="form3Example1cg"
-                    >FIRST NAME</label
-                  >
                   <div *ngIf="name.invalid && (name.dirty || name.touched)">
                     <div *ngIf="name.errors?.['required']">
                       Name is required
@@ -41,6 +41,9 @@
                       Name should have only alphabets
                     </div>
                   </div>
+                  <label class="form-label" for="form3Example1cg"
+                    >LAST NAME</label
+                  >
                   <input
                     type="text"
                     id="form3Example5cg"
@@ -49,12 +52,9 @@
                     minlength="4"
                     required
                     #name="ngModel"
-                    [(ngModel)]="ulname"
+                    [(ngModel)]="user.userlastname"
                     pattern="^[A-Za-z]+$"
                   />
-                  <label class="form-label" for="form3Example1cg"
-                    >LAST NAME</label
-                  >
                   <div *ngIf="name.invalid && (name.dirty || name.touched)">
                     <div *ngIf="name.errors?.['required']">
                       Name is required
@@ -71,6 +71,9 @@
                 </div>
 
                 <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example3cg"
+                    >EMAIL ID</label
+                  >
                   <input
                     type="email"
                     id="form3Example3cg"
@@ -79,12 +82,9 @@
                     maxlength="30"
                     required
                     #emailid="ngModel"
-                    [(ngModel)]="uemail"
+                    [(ngModel)]="user.useremail"
                     pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z.]{2,5}"
                   />
-                  <label class="form-label" for="form3Example3cg"
-                    >EMAIL ID</label
-                  >
                   <div
                     *ngIf="
                       emailid.invalid && (emailid.dirty || emailid.touched)
@@ -105,6 +105,9 @@
                 </div>
 
                 <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example4cg"
+                    >MOBILE NUMBER</label
+                  >
                   <input
                     type="password"
                     id="form3Example4cg"
@@ -113,12 +116,9 @@
                     maxlength="10"
                     required
                     #mobilenumber="ngModel"
-                    [(ngModel)]="umobile"
+                    [(ngModel)]="user.userphonenumber"
                     pattern="^[6-9]\d{9}$"
                   />
-                  <label class="form-label" for="form3Example4cg"
-                    >MOBILE NUMBER</label
-                  >
                   <div
                     *ngIf="
                       mobilenumber.invalid &&
@@ -140,6 +140,9 @@
                 </div>
 
                 <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example4cdg"
+                    >PASSWORD</label
+                  >
                   <input
                     type="password"
                     id="form3Example4cdg"
@@ -149,12 +152,9 @@
                     maxlength="20"
                     required
                     #password="ngModel"
-                    [(ngModel)]="upassword"
+                    [(ngModel)]="user.userpassword"
                     pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$"
                   />
-                  <label class="form-label" for="form3Example4cdg"
-                    >PASSWORD</label
-                  >
                   <div
                     *ngIf="
                       password.invalid && (password.dirty || password.touched)
@@ -191,6 +191,7 @@
 
                 <div class="d-flex justify-content-center">
                   <button
+                    (click)="register()"
                     type="button"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
                   >

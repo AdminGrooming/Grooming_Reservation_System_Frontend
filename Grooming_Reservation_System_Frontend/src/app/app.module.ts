@@ -10,6 +10,7 @@ import { LandingpageComponent } from './components/landingpage/landingpage.compo
 import {HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserregistrationComponent } from './components/userregistration/userregistration.component';
+import { SalonregistrationComponent } from './components/salonregistration/salonregistration.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UserregistrationComponent } from './components/userregistration/userreg
     LoginComponent,
     HomepageComponent,
     LandingpageComponent,
-    UserregistrationComponent
+    UserregistrationComponent,
+    SalonregistrationComponent
   ],
   imports: [
     BrowserModule,
