@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./userregistration.component.css']
 })
 export class UserregistrationComponent {
+  ufname="";
+  ulname="";
+  uemail="";
+  umobile="";
+  upassword="";  
 
 }

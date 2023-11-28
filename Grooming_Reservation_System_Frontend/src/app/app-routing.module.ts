@@ -4,14 +4,15 @@ import { LoginComponent } from './components/login/login.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
 import { RouteguardService } from './services/routeguard.service';
-import { UserregisterationComponent } from './components/userregisteration/userregisteration.component';
+import { UserregistrationComponent } from './components/userregistration/userregistration.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'landingpage', pathMatch: 'full' },
   { path: 'landingpage', component: LandingpageComponent},
   { path: 'login', component: LoginComponent },
   { path: "homepage", component: HomepageComponent, canActivate:[RouteguardService] },
-  { path: "userregisteration", component: UserregisterationComponent, canActivate:[RouteguardService] },
+  { path: "userregistration", component: UserregistrationComponent, canActivate:[RouteguardService] },
 ];
 
 @NgModule({

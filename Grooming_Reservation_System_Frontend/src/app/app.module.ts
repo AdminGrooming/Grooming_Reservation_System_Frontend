@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { UserregisterationComponent } from './components/userregisteration/userregisteration.component';
 import { FormsModule } from '@angular/forms';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
@@ -16,7 +15,6 @@ import { UserregistrationComponent } from './components/userregistration/userreg
   declarations: [
     AppComponent,
     LoginComponent,
-    UserregisterationComponent,
     HomepageComponent,
     LandingpageComponent,
     UserregistrationComponent
