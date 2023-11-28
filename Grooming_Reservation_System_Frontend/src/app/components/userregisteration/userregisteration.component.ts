@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class UserregisterationComponent {
 
-uname: any;
+  ufname="";
+  ulname="";
+  uemail="";
+  umobile="";
+  upassword="";  
 
 }

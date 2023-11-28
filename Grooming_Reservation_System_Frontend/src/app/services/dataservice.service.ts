@@ -11,11 +11,11 @@ export class DataserviceService {
   constructor(private http: HttpClient) { }
 
   getUserByEmailPassword(email:string, password:string){
-    return this.http.get<User>(`${this.url}/getUserByEmail/${email}/${password}`);
+    return this.http.get<User>(`${this.url}/getUserByEmailPassword/${email}/${password}`);
   }
 
   getUserByEmail(email:string){
-    return this.http.get<User>(`${this.url}/getUserByEmail/${email}`);
+    return this.http.get<User>(`${this.url}/getUserByEmailid/${email}`);
   }
   
 

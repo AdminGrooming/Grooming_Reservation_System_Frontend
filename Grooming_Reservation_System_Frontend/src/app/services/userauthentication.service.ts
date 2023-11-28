@@ -9,30 +9,42 @@ import { Router } from '@angular/router';
 })
 export class UserauthenticationService {
   userdata : User;
-  email: string;
-  constructor(private dataservice: DataserviceService, private router: Router) { }
+  
+  
 
-  validateUser(usermail: string , userpass: string ) {
+  constructor(private dataservice: DataserviceService) { }
+  
+  validateUser(usermail: string  ) {
+    console.log("in usermail");
     this.dataservice.getUserByEmail(usermail).subscribe(data => {
-      this.email = data.useremail;
-    },banckenderror=>this.errorHandling(banckenderror)
+      this.userdata = data;
+      
+    },banckenderror1=>this.errorHandling(banckenderror1)
     )
 
   }
   errorHandling(banckenderror: any): void {
-    console.log("inside error"+banckenderror);
-    console.log("status="+banckenderror.status);
+    console.log("inside error mail "+banckenderror);
+    
+   if(banckenderror.status == 400){
+    console.log("400");
+         alert("Invalid useremail");
+   }
+   
+  }
+
   
-   if(banckenderror.status==400){
-         alert("User email does not exist");
-   }
-   else{
-    alert
-   }
-  }
   checkemailPass(usermail: string , userpass: string){
-    return this.dataservice.getUserByEmailPassword(usermail,userpass);
+    console.log("in checkmail and pass");
+    this.validateUser(usermail);
+    if(this.userdata!=null){
+      return this.dataservice.getUserByEmailPassword(usermail,userpass);
+    }
+    
+    return null;
+   
   }
+
 
   isUserLoggedIn(){
     let user= sessionStorage.getItem('usermail');
