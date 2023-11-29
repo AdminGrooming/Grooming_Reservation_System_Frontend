@@ -33,11 +33,15 @@
                       required
                       name="uemail"
                       [(ngModel)]="inpusermail"
+                      pattern="^[a-zA-Z]{1}[a-zA-Z0-9.\-_]*@[a-zA-Z]{1}[a-zA-Z.-]*[a-zA-Z]{1}[.][a-zA-Z]{2,}$"
                     />
                   </div>
                   <div *ngIf="email.invalid && (email.dirty || email.touched)">
                     <div *ngIf="email.errors?.['required']">
                       Email is required
+                    </div>
+                    <div *ngIf="email.errors?.['pattern']">
+                      emailid is invalid
                     </div>
                   </div>
 
@@ -69,10 +73,21 @@
                       Log in
                     </button>
                     <br />
-
                     <a class="text-muted" href="#!">Forgot password?</a>
                   </div>
                 </form>
+                <div
+                  class="d-flex align-items-center justify-content-center pb-4"
+                >
+                  <p class="mb-0 me-2">Don't have an account?</p>
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                    (click)="registerBtn()"
+                  >
+                    Create new
+                  </button>
+                </div>
               </div>
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">

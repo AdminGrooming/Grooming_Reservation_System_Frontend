@@ -6,27 +6,29 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { LandingpageComponent } from './components/landingpage/landingpage.component';
 import {HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserregistrationComponent } from './components/userregistration/userregistration.component';
 import { SalonregistrationComponent } from './components/salonregistration/salonregistration.component';
+import { LpageComponent } from './components/lpage/lpage.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomepageComponent,
-    LandingpageComponent,
     UserregistrationComponent,
-    SalonregistrationComponent
+    SalonregistrationComponent,
+    LpageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

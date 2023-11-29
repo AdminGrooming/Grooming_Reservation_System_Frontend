@@ -21,24 +21,29 @@
                     type="text"
                     id="form3Example1cg"
                     class="form-control form-control-lg"
-                    name="name"
+                    name="firstname"
                     minlength="4"
                     required
-                    #name="ngModel"
+                    #firstname="ngModel"
                     [(ngModel)]="user.userfirstname"
                     pattern="^[A-Za-z]+$"
                   />
-                  <div *ngIf="name.invalid && (name.dirty || name.touched)">
-                    <div *ngIf="name.errors?.['required']">
-                      Name is required
+                  <div
+                    *ngIf="
+                      firstname.invalid &&
+                      (firstname.dirty || firstname.touched)
+                    "
+                  >
+                    <div *ngIf="firstname.errors?.['required']">
+                      firstname is required
                     </div>
 
-                    <div *ngIf="name.errors?.['minlength']">
-                      Name should have atleast 4 chars
+                    <div *ngIf="firstname.errors?.['minlength']">
+                      firstname should have atleast 4 chars
                     </div>
 
-                    <div *ngIf="name.errors?.['pattern']">
-                      Name should have only alphabets
+                    <div *ngIf="firstname.errors?.['pattern']">
+                      firstname should have only alphabets
                     </div>
                   </div>
                   <label class="form-label" for="form3Example1cg"
@@ -48,24 +53,28 @@
                     type="text"
                     id="form3Example5cg"
                     class="form-control form-control-lg"
-                    name="name"
+                    name="lastname"
                     minlength="4"
                     required
-                    #name="ngModel"
+                    #lastname="ngModel"
                     [(ngModel)]="user.userlastname"
                     pattern="^[A-Za-z]+$"
                   />
-                  <div *ngIf="name.invalid && (name.dirty || name.touched)">
-                    <div *ngIf="name.errors?.['required']">
-                      Name is required
+                  <div
+                    *ngIf="
+                      lastname.invalid && (lastname.dirty || lastname.touched)
+                    "
+                  >
+                    <div *ngIf="lastname.errors?.['required']">
+                      lastname is required
                     </div>
 
-                    <div *ngIf="name.errors?.['minlength']">
-                      Name should have atleast 4 chars
+                    <div *ngIf="lastname.errors?.['minlength']">
+                      lastname should have atleast 4 chars
                     </div>
 
-                    <div *ngIf="name.errors?.['pattern']">
-                      Name should have only alphabets
+                    <div *ngIf="lastname.errors?.['pattern']">
+                      lastname should have only alphabets
                     </div>
                   </div>
                 </div>
@@ -83,7 +92,7 @@
                     required
                     #emailid="ngModel"
                     [(ngModel)]="user.useremail"
-                    pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z.]{2,5}"
+                    pattern="^[a-zA-Z]{1}[a-zA-Z0-9.\-_]*@[a-zA-Z]{1}[a-zA-Z.-]*[a-zA-Z]{1}[.][a-zA-Z]{2,}$"
                   />
                   <div
                     *ngIf="
@@ -109,7 +118,7 @@
                     >MOBILE NUMBER</label
                   >
                   <input
-                    type="password"
+                    type="text"
                     id="form3Example4cg"
                     class="form-control form-control-lg"
                     name="mobilenumber"
@@ -133,7 +142,7 @@
                       Invalid mobilenumber
                     </div>
 
-                    <div *ngIf="name.errors?.['maxlength']">
+                    <div *ngIf="mobilenumber.errors?.['maxlength']">
                       mobilenumber should have atleast 10 digits
                     </div>
                   </div>
@@ -181,7 +190,7 @@
                     class="form-check-input me-2"
                     type="checkbox"
                     value=""
-                    id="form2Example3cg"
+                    id="TCCheckbox"
                   />
                   <label class="form-check-label" for="form2Example3g">
                     I agree all statements in
@@ -201,7 +210,9 @@
 
                 <p class="text-center text-muted mt-5 mb-0">
                   Have already an account?
-                  <a href="#!" class="fw-bold text-body"><u>Login here</u></a>
+                  <a routerLink="/login" class="fw-bold text-body"
+                    ><u>Login here</u></a
+                  >
                 </p>
               </form>
             </div>
