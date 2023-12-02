@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
-import { UserauthenticationService } from './userauthentication.service';
+import { UserauthenticationService } from './userdataservices/userauthentication.service';
 import { retry } from 'rxjs';
 
 @Injectable({
@@ -13,11 +13,11 @@ export class RouteguardService implements CanActivate{
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
         if(this.userauthentication.isUserLoggedIn()){
           return true;
-          //navigate to login page
         }else{
           this.router.navigate(['login']);
         }
         return false; 
   }
+  
 
 }

@@ -12,7 +12,10 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form>
+              <form
+                (ngSubmit)="!userForm.invalid && register()"
+                #userForm="ngForm"
+              >
                 <div class="form-outline mb-2">
                   <label class="form-label" for="form3Example1cg"
                     >FIRST NAME</label
@@ -22,7 +25,7 @@
                     id="form3Example1cg"
                     class="form-control form-control-lg"
                     name="firstname"
-                    minlength="4"
+                    minlength="3"
                     required
                     #firstname="ngModel"
                     [(ngModel)]="user.userfirstname"
@@ -157,12 +160,12 @@
                     id="form3Example4cdg"
                     class="form-control form-control-lg"
                     name="password"
-                    minlength="8"
+                    minlength="5"
                     maxlength="20"
                     required
                     #password="ngModel"
                     [(ngModel)]="user.userpassword"
-                    pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$"
+                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
                   />
                   <div
                     *ngIf="
@@ -170,17 +173,17 @@
                     "
                   >
                     <div *ngIf="password.errors?.['required']">
-                      Name is required
+                      Password is required
                     </div>
 
                     <div *ngIf="password.errors?.['minlength']">
-                      Name should have atleast 8 character and less than 20
+                      Password should have atleast 5 character and less than 20
                       character
                     </div>
 
                     <div *ngIf="password.errors?.['pattern']">
-                      Name should have one uppercase ,one lowercase,one special
-                      character and number
+                      Password should have one uppercase ,one lowercase,one
+                      special character and number
                     </div>
                   </div>
                 </div>
@@ -200,8 +203,7 @@
 
                 <div class="d-flex justify-content-center">
                   <button
-                    (click)="register()"
-                    type="button"
+                    type="submit"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
                   >
                     Register

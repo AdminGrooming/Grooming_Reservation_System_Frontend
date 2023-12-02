@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../dao/user';
+import { User } from '../../dao/user';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +22,4 @@ export class DataserviceService {
     return this.http.post<User>(`${this.url}/addUser`, user);
   }
   
-
 }

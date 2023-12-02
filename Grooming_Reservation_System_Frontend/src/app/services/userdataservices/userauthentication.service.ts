@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { DataserviceService } from './dataservice.service';
-import { User } from '../dao/user';
+import { DataserviceService } from './userdataservice.service';
+import { User } from '../../dao/user';
 import { Router } from '@angular/router';
 
 @Injectable({

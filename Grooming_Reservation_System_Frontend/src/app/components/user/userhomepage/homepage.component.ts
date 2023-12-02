@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserauthenticationService } from 'src/app/services/userauthentication.service';
+import { UserauthenticationService } from 'src/app/services/userdataservices/userauthentication.service';
 
 @Component({
   selector: 'app-homepage',
